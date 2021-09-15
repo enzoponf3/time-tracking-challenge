@@ -1,0 +1,246 @@
+:root {
+  --Blue: hsl(246, 80%, 60%);
+  --Light-orange: hsl(15, 100%, 70%);
+  --Soft-blue: hsl(195, 74%, 62%);
+  --Light-red: hsl(348, 100%, 68%);
+  --Lime-green: hsl(145, 58%, 55%);
+  --Violet: hsl(264, 64%, 52%);
+  --Soft-orange: hsl(43, 84%, 65%);
+
+  --blue: hsl(226, 43%, 10%);
+  --Dark-blue: hsl(235, 46%, 20%);
+  --Desaturated-blue: hsl(235, 45%, 61%);
+  --Pale-Blue: hsl(236, 100%, 87%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+body {
+  background: var(--blue);
+}
+
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: var(--Dark-blue);
+  border-radius: 1rem;
+}
+
+.user-info {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: var(--Blue);
+  display: flex;
+  align-items: center;
+}
+
+.user-info > div > img {
+  height: 4rem;
+  border: 3px solid #efefef;
+  border-radius: 50%;
+}
+
+.user-info h1 {
+  color: #cfcfcf;
+  font-size: 14px;
+  font-weight: 300;
+  margin-left: 1rem;
+}
+
+.user-info h2 {
+  color: #efefef;
+  margin-left: 1rem;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.time-selector {
+  padding: 1.5rem;
+  display: flex;
+}
+
+.time-selected {
+  color: #efefef !important;
+}
+
+.time-selector button {
+  background: transparent;
+  color: var(--Desaturated-blue);
+  font-size: 18px;
+  border: none;
+  width: 33%;
+  cursor: pointer;
+}
+
+.time-selector button:hover {
+  color: var(--Pale-Blue);
+}
+
+.card {
+  margin-top: 1rem;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+  color: #efefef;
+}
+
+.card > img {
+  position: absolute;
+  right: 1.5rem;
+  top: -12px;
+  z-index: 0;
+}
+
+.card > div {
+  position: relative;
+  margin-top: 2.3rem;
+  padding: 1.5rem;
+  background: var(--Dark-blue);
+  border-radius: 1rem;
+  z-index: 2;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.card-header h3 {
+  font-weight: 400;
+}
+
+.card-header button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-body > :nth-child(1) {
+  font-size: 26px;
+  font-weight: 300;
+}
+
+.card-body > :nth-child(2) {
+  color: var(--Pale-Blue);
+  font-size: 14px;
+}
+
+#work-card {
+  background: var(--Light-orange);
+}
+#play-card {
+  background: var(--Soft-blue);
+}
+#study-card {
+  background: var(--Light-red);
+}
+#exercise-card {
+  background: var(--Lime-green);
+}
+#social-card {
+  background: var(--Violet);
+}
+#self-care-card {
+  background: var(--Soft-orange);
+}
+
+.attribution {
+  color: #cfcfcf;
+  padding: 1rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: #cfcfcf;
+}
+
+@media screen and (min-width: 641px) {
+  main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .card {
+    width: calc(50% - 0.5rem);
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .container {
+    flex-direction: row;
+  }
+  .user-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .user-data {
+    margin: 2rem 0 4rem 0;
+  }
+  .user-info h1,
+  .user-info h2 {
+    margin-left: 0;
+  }
+  .user-info h2 {
+    font-size: 32px;
+  }
+  .time-selector {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .time-selector button {
+    padding: 0.4rem 0;
+    margin: 0.4rem 0;
+    width: fit-content;
+    text-align: left;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 2rem;
+    grid-gap: 2rem;
+    width: 100%;
+  }
+
+  .card {
+    margin: 0;
+    width: 100%;
+  }
+
+  .card > div {
+    height: 100%;
+  }
+
+  .card-body {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 2rem;
+  }
+
+  .card-body > :nth-child(1) {
+    font-size: 3rem;
+  }
+
+  .card-body > :nth-child(2) {
+    margin-top: 1rem;
+  }
+}
